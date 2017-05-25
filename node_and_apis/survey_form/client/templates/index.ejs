@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form tester</title>
+    <link rel="stylesheet" href="./templates/form.css">
+</head>
+
+<body>
+    <div id="wrapper">
+            <div id="form">
+                <form action="/result" method="post">
+                <div class="row">
+                    <div class="cell">
+                        <label for="text">Your Name:</label>
+                    </div>
+                    <div class="cell">
+                        <input type="text" name="name" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        <label for="text">Dojo Location:</label>
+                    </div>
+                    <div class="cell">
+                        <select name="dojo_location">
+                        <option value="Franklin, WI">Franklin, WI</option>
+                        <option value="Greenfield, WI">Greenfield, WI</option>
+                        <option value="Milwaukee, WI">Milwaukee, WI</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        <label for="text">Favorite Language:</label>
+                    </div>
+                    <div class="cell">
+                        <select name="favorite_language">
+                        <option value="Javascript">Javascript</option>
+                        <option value="Python">Python</option>
+                        <option value="Node">Node</option>
+                    </select>
+                    </div>
+                </div>
+                <div id="textarea">
+                    <label for="text">Comment (optional):</label>
+                    <textarea id="textfield" name="comment"></textarea>
+                <div id="button">
+                    <input type="submit" value="submit">
+                </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
