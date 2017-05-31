@@ -1,0 +1,11 @@
+.wrapper {
+    height: 1000px;
+    width: 1000px;
+    background-color: green;
+}
+
+img {
+    width: 600px;
+    display: block;
+    margin: 50px auto;
+}

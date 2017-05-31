@@ -5,7 +5,13 @@ module.exports = function(app) {
     })
 
     app.post('/submit', function(req, res) {
-        res.send('hi');
+        res.render('name_results', req.body);
+
+    })
+
+    app.delete('/delete', function(req, res) {
+        res.status(202);
+        res.end();
     })
 
 }
