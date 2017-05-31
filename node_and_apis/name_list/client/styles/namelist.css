@@ -5,7 +5,7 @@
 
 .header {
     text-align: center;
-    width: 40%;
+    width: 50%;
     height: auto;
     font-size: 24px;
     margin: 0px auto;
@@ -16,7 +16,7 @@
     background-color: lightblue;
     border-radius: 20px;
     height: 200px;
-    width: 400px;
+    width: 45%;
     margin: 0px auto;
     text-align: center;
     justify-content: center;
@@ -29,13 +29,54 @@
     padding: 10px;
     margin: 0px auto;
     width: 70%;
+    font-size: 18px;
 }
 
 .button {
     margin-top: 20px;
+    height: auto;
 }
 
-inputbutton {
+.inputbutton {
     display: block;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin: 0px auto;
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid gray;
+}
+
+.namelist {
+    margin: 15px auto;
+    width: 50%;
+    border-bottom: 1px solid lightblue;
+}
+
+.namelist p {
+    margin: 0px auto;
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    margin-right: 50px;
+}
+
+.trash {
+    float: right;
+    background-color: white;
+    border: none;
+}
+
+img {
+    width: 25px;
+    float: right;
+}
+
+.footer {
+    border-bottom: 2px solid lightblue;
+    width: 50%;
+    margin: 15px auto;
+    font-size: 14px;
 }
