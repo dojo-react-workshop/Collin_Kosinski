@@ -30,6 +30,7 @@
 
         const container = (props) => {
             const squares = props.squares.map((squareObj, idx) => {
+                console.log(squareObj);
                 return React.createElement(square, {
                     key: idx,
                     colorData: squareObj
@@ -43,9 +44,7 @@
         }
 
         const square = (props) => {
-            const {
-                colorData
-            } = props;
+            const {colorData} = props;
             const style = {
                 height: '275px',
                 width: '275px',
