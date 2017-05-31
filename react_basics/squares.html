@@ -1,0 +1,72 @@
+<!<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Composable Squares</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <script>
+        'use strict';
+
+        const appContainer = document.getElementById('app');
+
+        const squares = [{
+            background: 'blue',
+            text: 'white'
+        }, {
+            background: 'green',
+            text: 'black'
+        }, {
+            background: 'purple',
+            text: 'gray'
+        }]
+
+        const container = (props) => {
+            const squares = props.squares.map((squareObj, idx) => {
+                return React.createElement(square, {
+                    key: idx,
+                    colorData: squareObj
+                })
+            })
+
+
+            return React.createElement('div', null,
+                squares
+            );
+        }
+
+        const square = (props) => {
+            const {
+                colorData
+            } = props;
+            const style = {
+                height: '275px',
+                width: '275px',
+                display: 'inline-block',
+                fontsize: '30px',
+                color: colorData.text,
+                backgroundColor: colorData.background
+            };
+
+            const text = `${style.color} on ${style.backgroundColor}`;
+
+            return React.createElement('div', {
+                    style: style
+                },
+                text);
+        }
+        ReactDOM.render(
+            React.createElement(container, {
+                squares: squares
+            }), appContainer)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!<!DOCTYPE html>
+<html>
+
+<head>
+    <title>react document</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <style media="screen">
+        .demo {
+            border: 1px solid #ccc;
+            margin: 1em;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="js">
+    </div>
+    <div id="react">
+    </div>
+    <div id="dojo">
+    </div>
+    <script>
+        const jsContainer = document.getElementById("js");
+        const reactContainer = document.getElementById("react");
+        const dojoContainer = document.getElementById("dojo");
+
+        function renderJS() {
+            jsContainer.innerHTML = `
+            <div class="demo">
+            Hello JS
+            <input />
+            <p>${new Date()}</p>
+       </div>
+       `;
+        }
+
+        function renderReact() {
+            ReactDOM.render(
+                React.createElement(
+                    'div', {
+                        className: 'demo'
+                    },
+                    "Hello React",
+                    React.createElement('input'),
+                    React.createElement('p', null, `${new Date()}`)
+                ),
+                reactContainer);
+        }
+
+
+        const headerComponent = (props) => {
+            return React.createElement('h1', null, 'Hello Dojo!')
+        }
+        const subHeaderComponent = (props) => {
+            return React.createElement('h3', null, 'Things I need to do:');
+        }
+        const listComponent = (props) => {
+            const {
+                todos
+            } = props;
+            const listItems = todos.map((text) => {
+                return React.createElement('li', null, text);
+            })
+            return React.createElement('ul', null, listItems);
+
+        }
+        ReactDOM.render(
+            React.createElement(
+                'div', null,
+                React.createElement(headerComponent, null),
+                React.createElement(subHeaderComponent, null),
+                React.createElement(listComponent, {
+                    todos: ['Learn React', 'Climb Mt.Everest', 'Run a marathon', 'Feed the dogs']
+                })
+            ),
+            dojoContainer
+        );
+
+
+        setInterval(renderJS, 1000);
+        setInterval(renderReact, 1000);
+    </script>
+</body>
+
+</html>
