@@ -1,0 +1,55 @@
+*{
+ background-color: lightgray; 
+}
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.header{
+  text-align: center;
+  font-size: 35px;
+
+}
+.listContainer{
+  margin: 0px auto;
+  width: 800px;
+  height: auto;
+}
+.counter{
+  margin: 0px auto;
+  width: 500px;
+  height: 125px;
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: white;
+  display: block;
+  justify-content: space-around;
+  
+  
+}
+.numberContainer{
+  background-color: lightgray;
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5%;
+  border: 1px solid darkgray;
+  
+}
+.language{
+  text-align: center;
+  margin-top: 10%;
+  background-color: white;
+  display: inline-block;
+  vertical-align: middle;
+  width: 275px;
+}
+img{
+  display: inline-block;
+  width: 75px;
+  vertical-align: middle;
+  
+}

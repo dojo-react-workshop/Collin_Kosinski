@@ -11,7 +11,7 @@
 <body>
     <div id="app">
     </div>
-    <script>
+    <script type="text/babel">
         'use strict'
 
         const voteContainer = document.getElementById('app');
@@ -38,10 +38,10 @@
         ]
         }
 
-        const container = (props) => {
+        const Container = (props) => {
             const voteData = props.voteData.items.map((voteObj, idx) => {
                 console.log(voteObj);
-                return React.createElement('div', {key:idx, voteInfo:voteObj})
+                return React.createElement('row', {key:idx, voteInfo:voteObj})
             })
 
             return React.createElement('div', null,
@@ -60,9 +60,7 @@
                 margin: '0px auto'
             };
 
-            
-           
-            return React.createElement('div', {
+            return React.createElement('div', className="row", {
                     style: style
                 },
                 voteData);
@@ -70,7 +68,7 @@
 
         }
         ReactDOM.render(
-            React.createElement(container, {
+            React.createElement(Container, {
                 voteData: voteData
             }), voteContainer)
         
