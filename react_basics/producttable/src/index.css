@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.App{
+  margin: auto auto;
+  Width: 500px;
+  height: 1000px;
+  background-color: gray;
+  display: block;
+  padding: 25px;
+
+}
+.Inputs{
+width: 450px;
+height: auto;
+border: 1px solid yellow;
+display: block;
+margin: auto auto;
+padding: 10px;
+
+
+}
+.SearchResults{
+display: block;
+width: 350px;
+height: 200px;
+border: 1px solid green;
+padding: 10px;
+
+margin: 10px auto;
+}
+.ResultCategory{
+width: 350px;
+border: 1px solid pink;
+height: 80px;
+margin-top: 10px;
+
+
+}
+.Result{
+border: 1px solid blue;
+width: 350px;
+height: 25px;
+margin-top: 10px;
+}
