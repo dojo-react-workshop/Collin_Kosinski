@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import {string} from 'prop-types';
 import Form from './Form';
 import FormResults from './FormResults';
 import RouterResults from './RouterResults';
@@ -10,21 +9,21 @@ import RouterResults from './RouterResults';
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.State={
+        this.state={
             users:[]
         }
     }
-    //  logFormValue = (value) => {
-    //     console.log(value)
-    //    return axios.get(`https://api.github.com/search/users?q=${value}`)
-    //     .then((response) =>{
-    //         this.setState({
-    //             users:response.data.items
-    //         })
-    //     })
-    //     .catch((err) => {
-    //         console.log(err)
-    //     })
+      logFormValue = (value) => {
+        console.log(value)
+       return axios.get(`https://api.github.com/search/users?q=${value}`)
+        .then((response) =>{
+            this.setState({
+                users:response.data.items
+            })
+        })
+        .catch((err) => {
+            console.log(err)
+        })
 
     }
     render() {
@@ -33,16 +32,15 @@ class App extends React.Component {
             <div className="App">
                 <h1> Bootcamp Repo App </h1>
                 <Form passStateToApp={this.logFormValue} />
-                <FormResults users={this.State.users} />
+                <FormResults users={this.state.users} />
                 <RouterResults repos={repos} />
             </div>
         )
     }
 
 }
-App.propTypes = {
-    passStateToApp: string.isRequired
 
-}
+
+
 
 export default App;
