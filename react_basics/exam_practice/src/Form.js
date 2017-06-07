@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
+
 
 
 class Form extends React.Component {
@@ -30,6 +32,9 @@ class Form extends React.Component {
         }
     }
     handleSubmit = (event) => {
+        if (this.props.location.path !== '/') {
+            this.props.history.push(`/`)
+        }
         event.preventDefault();
         if (this.state.submitFlag) {
             this.props.passStateToApp(this.state.repo_name);
@@ -38,10 +43,10 @@ class Form extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form className="form" onSubmit={this.handleSubmit}>
                     <input type="text" name="repo_name" placeholder="Repo Name" onChange={this.handleChange} value={this.state.value} />
                     <p> {this.state.nameValidation} </p>
-                    <input type="submit" name="submit" placeholder="Submit" />
+                    <input className="button" type="submit" name="submit" placeholder="Submit" disabled={this.state.repo_name === ''} />
                 </form>
             </div>
         )

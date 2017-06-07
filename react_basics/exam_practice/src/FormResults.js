@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { array } from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 const FormResults = (props) => {
     const tableRows = props.users.map((user) => {
         return (
             <tr key={user.id}>
-                <td>{user.login}</td>
+                 <td><Link onClick={() => props.onClick(user.login)} to={`/${user.login}/repos`}>{user.login}</Link></td>
             </tr>
         )
     })

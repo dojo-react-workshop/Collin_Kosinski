@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 const RouterResults = (props) => {
     const tableRows = props.repos.map((nameObj) => {
+        console.log(nameObj.name)
         return(
              <tr key={nameObj.id}>
                 <td>{nameObj.name}</td>
@@ -17,9 +18,7 @@ const RouterResults = (props) => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
                  {tableRows}
-                </tr>
             </tbody>
         </table>
     )
